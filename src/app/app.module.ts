@@ -16,3 +16,4 @@ import { AppComponent } from './app.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+//@NgModule : decorador permite hacer las declaraciones de los modelos que usaremos.

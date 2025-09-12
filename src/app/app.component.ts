@@ -7,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'basesAngular01';
+  title = 'ASTRID ARLET';
+
+  duplicarNumero(valor:number):number{
+    return valor*2;
+  }
+
+  pelicula={
+    titulo:"SI TUVIERA 100",
+    ANIO: 2002,
+    GENERO: "ROMANTICA"
+  }
 }
