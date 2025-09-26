@@ -1,53 +1,44 @@
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+
 <div class="col-6">
-    <div class="mb-3">
-      <form>
-        <div class="form-group pt-4">
-          <label for="num1">Número 1:</label>
-          <input
-            [(ngModel)]="num1"
-            name="num1"
-            type="text"
-            class="form-control"
-            id="num1"
-            placeholder="Ingrese número 1"
-          />
-        </div>
-        <div class="form-group pt-4">
-          <label for="num2">Número 2:</label>
-          <input
-            [(ngModel)]="num2"
-            name="num2"
-            type="text"
-            class="form-control"
-            id="num2"
-            placeholder="Ingrese número 2"
-          />
-        </div>
-        <br />
-        <input type="radio" name="op" (click)=" sumar() ">
-        <label for="sumar"> SUMAR </label>
-
-        <br>
-
-        <input type="radio" name="op" (click)=" restar() ">
-        <label for="sumar"> RESTAR </label>
-        <br>
-
-        <input type="radio" name="op" (click)=" multiplicar() ">
-        <label for="sumar"> MULTIPLICAR </label>
-        <br>
-
-        <input type="radio" name="op" (click)=" dividir() ">
-        <label for="sumar"> DIVIDIR </label>
-
-
-        
-
-        
-      </form>
-    </div>
-    <div class="col-6">
-      <h3>Resultado: {{ resultado }}</h3>
-    </div>
+  <div class="mb-3">
+    <form>
+      <div class="form-group pt-4">
+        <label for="num1">Número 1:</label>
+        <input
+          [(ngModel)]="num1"
+          name="num1"
+          type="text"
+          class="form-control"
+          id="num1"
+          placeholder="Ingrese número 1"
+        />
+      </div>
+      <div class="form-group pt-4">
+        <label for="num2">Número 2:</label>
+        <input
+          [(ngModel)]="num2"
+          name="num2"
+          type="text"
+          class="form-control"
+          id="num2"
+          placeholder="Ingrese número 2"
+        />
+      </div>
+      <br />
+      <input (click)="sumar()" type="radio" class="btn btn-primary" name="milt">
+      <p>Sumar</p>
+      <input (click)="restar()"type="radio" class="btn btn-primary" name="milt">
+      <p>Restar</p>
+      <input (click)="multiplicar()"type="radio" class="btn btn-primary" name="milt">
+      <p>Multiplicar</p>
+      <input (click)="dividir()"type="radio" class="btn btn-primary" name="milt">
+      <p>Dividir</p>
+    
+    </form>
   </div>
-   
+  <div class="col-6">
+    <h3>Resultado: {{ resultado }}</h3>
+  </div>
+</div>

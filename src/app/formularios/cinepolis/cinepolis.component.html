@@ -1,0 +1,107 @@
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cinepolis.component.css">
+
+<div>
+  <div>
+    
+    <div class="col-md-6">
+      <h1 class="text-center">C I N E P O L I T O</h1>
+      <form>
+        
+        <div class="mb-3">
+          <h3>ENTRADAS</h3>
+          <label for="nombre">NOMBRE:</label>
+          <input
+          [(ngModel)]="nombre"
+            id="nombre"
+            name="nombre"
+            type="text"
+            class="form-control"
+            placeholder="Ingresa su nombre"
+          />
+        </div>
+
+        
+        <div class="mb-3">
+          <label for="compradores" >CANTIDAD DE COMPRADORES</label>
+          <input
+          [(ngModel)]="compradores"
+            id="compradores"
+            name="compradores"
+            type="text"
+            min="1"
+            class="form-control"
+            placeholder="Cantidad"
+          />
+        </div>
+
+      
+        <div class="mb-3">
+          <label class="form-label">¿TARJETA CINCO?</label><br />
+          <div class="form-check">
+            <label class="form-check-label" for="Si">SI</label>
+            <input
+            [(ngModel)]="sitiene"
+              class="form-check-input"
+              type="radio"
+              id="sitiene"
+              name="cineco"
+              value="si"
+            />
+           
+          </div>
+          <div class="form-check ">
+            <label class="form-check-label" for="cinecoNo">NO</label>
+            <input
+              
+              class="form-check-input"
+              type="radio"
+              id="no"
+              name="cineco"
+              value="no"
+            />
+           
+            <input
+              
+              class="form-check-input"
+              type="radio"
+              id="cinecoNo"
+              name="cineco"
+              value="no"
+            />
+          </div>
+        </div>
+
+       
+        <div class="mb-3">
+          <label for="boletos" class="form-label">CANTIDAD DE BOLETOS</label>
+          <input
+            [(ngModel)]="boletos"
+            id="boletos"
+            name="boletos"
+            type="number"
+            min="1"
+            max="7"
+            class="form-control"
+            placeholder="Máximo 7"
+          />
+        </div>
+
+
+       
+        <div class="d-flex justify-content-between">
+          <h3>ACCIONES</h3>
+          <button (click)="cuenta()" type="submit" class="btn btn-outline-secondary rounded-pill">PROCESAR</button>
+          <button  (click)="cero()" type="reset" class="btn btn-outline-secondary rounded-pill">SALIR</button>
+        </div>
+      </form>
+    </div>
+
+    
+    <div class="col-md-6">
+      <h3>SALIDAS</h3>
+      <h3 class="mt-5">VALOR A PAGAR:</h3>
+      <div class="h4">{{valorapagar}}</div>
+    </div>
+  </div>
+</div>
