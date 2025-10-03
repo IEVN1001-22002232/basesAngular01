@@ -1,1 +1,131 @@
-<p>resistencia works!</p>
+<div class="container mt-4">
+  <h3 class="mb-4 text-center">Calculadora de Resistencias</h3>
+
+  <div class="row text-center">
+
+    <div class="col-md-3">
+      <label class="form-label fw-bold">BANDA 1</label>
+      <table class="table table-bordered">
+        <tbody>
+          <tr *ngFor="let c of operaciones.colores; let i = index">
+            <td>
+              <input type="radio" [(ngModel)]="uno" [value]="i" name="uno">
+            </td>
+            <td [ngStyle]="{'background-color': c.css, 'color': (c.css==='yellow'||c.css==='white')?'black':'white'}">
+              <span class="badge px-3"
+                    [ngStyle]="{'background-color': c.css, 'color': (c.css==='yellow' || c.css==='white') ? 'black' : 'white'}">
+                {{ c.nombre }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-3">
+      <label class="form-label fw-bold">BANDA 2</label>
+      <table class="table table-bordered">
+        <tbody>
+          <tr *ngFor="let c of operaciones.colores; let i = index">
+            <td>
+              <input type="radio" [(ngModel)]="dos" [value]="i" name="dos">
+            </td>
+            <td [ngStyle]="{'background-color': c.css, 'color': (c.css==='yellow'||c.css==='white')?'black':'white'}">
+              <span class="badge px-3"
+                    [ngStyle]="{'background-color': c.css, 'color': (c.css==='yellow' || c.css==='white') ? 'black' : 'white'}">
+                {{ c.nombre }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-3">
+      <label class="form-label fw-bold"> BANDA 3 Multiplicador</label>
+      <table class="table table-bordered">
+        <tbody>
+          <tr *ngFor="let m of operaciones.multiplicadores">
+            <td>
+              <input type="radio" [(ngModel)]="tres" [value]="m.valor" name="tres">
+            </td>
+            <td [ngStyle]="{'background-color': m.css, 'color': (m.css==='yellow' || m.css==='white') ? 'black' : 'white'}">
+              <span class="badge px-3"
+                    [ngStyle]="{'background-color': m.css, 'color': (m.css==='yellow' || m.css==='white') ? 'black' : 'white'}">
+                {{ m.color }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-3">
+      <label class="form-label fw-bold">Tolerancia</label>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>
+              <input type="radio" [(ngModel)]="TOLERANCIA" [value]="5" name="TOLERANCIA">
+            </td>
+            <td  style="background-color: gold; color: black;">
+              <span class="badge px-3" style="background-color: gold; color: black;">
+                Dorado (5%)
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="radio" [(ngModel)]="TOLERANCIA" [value]="10" name="TOLERANCIA">
+            </td>
+            <td  style="background-color: silver; color: black;">
+              <span class="badge px-3" style="background-color: silver; color: black;">
+                Plata (10%)
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="text-center my-4">
+    <button (click)="calculo()" class="btn btn-primary">Calcular</button>
+  </div>
+
+
+<div *ngIf="resultado" class="mt-4">
+  <table class="table table-bordered text-center">
+    <thead class="table-light">
+      <tr>
+        <th>COLOR 1</th>
+        <th>COLOR 2</th>
+        <th>Multiplicador</th>
+        <th>Tolerancia</th>
+        <th>Valor</th>
+        <th>Máximo</th>
+        <th>Mínimo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td [ngStyle]="{'background-color': resultado.color1Css, 'color': (resultado.color1Css === 'yellow' || resultado.color1Css === 'white') ? 'black' : 'white'}">
+          <span class="d-block py-2">{{ resultado.color1Nombre }}</span>
+        </td>
+        <td [ngStyle]="{'background-color': resultado.color2Css, 'color': (resultado.color2Css === 'yellow' || resultado.color2Css === 'white') ? 'black' : 'white'}">
+          <span class="d-block py-2">{{ resultado.color2Nombre }}</span>
+        </td>
+        <td [ngStyle]="{'background-color': resultado.color3Css, 'color': (resultado.color3Css === 'yellow' || resultado.color3Css === 'white') ? 'black' : 'white'}">
+          <span class="d-block py-2">{{ resultado.color3Nombre }}</span>
+        </td>
+        <td [ngStyle]="{'background-color': resultado.colorTolCss, 'color': 'black'}">
+          <span class="d-block py-2">{{ resultado.colorTolNombre }}</span>
+        </td>
+        <td>{{ resultado.valor }} Ω</td>
+        <td>{{ resultado.valorMax }} Ω</td>
+        <td>{{ resultado.valorMin }} Ω</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

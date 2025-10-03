@@ -1,0 +1,34 @@
+<h2>PRACTICA EXTRA</h2>
+<p>
+  Para el siguiente problema se te pide encontrar la distancia entre dos puntos según el ejemplo que se te proporciona:
+</p>
+<pre>
+Ejemplo:
+FORMULA DE LA DISTANCIA = √((x₂ - x₁)² + (y₂ - y₁)²)
+√((5 - (-4))² + (-2 - 3)²)
+√(9² + (-5)²)
+√(81 + 25)
+√106 ≈ 10.30
+</pre>
+
+<h2>DISTANCIA ENTRE DOS PUNTOS</h2>
+<form>
+
+    <label for="x2">x^2</label><br>
+  <input type="text" [(ngModel)]="X2" name="X2" style="width: 200px; appearance: none;"><br><br>
+
+  <label for="x1">x^1</label><br>
+  <input type="text" [(ngModel)]="X1" name="X1" style="width: 200px; appearance: none;"><br><br>
+
+  <label for="y2">y^2</label><br>
+  <input type="text" [(ngModel)]="Y2" name="Y2" style="width: 200px; appearance: none;"><br><br>
+
+  <label for="y1">y^1</label><br>
+  <input type="text" [(ngModel)]="Y1" name="Y1" style="width: 200px; appearance: none;"><br><br>
+
+
+  <button type="button" (click)="calcularDistancia()">CALCULAR</button>
+</form>
+<br>
+
+<p>LA DISTANCIA ES DE: {{ DIST }}</p>
